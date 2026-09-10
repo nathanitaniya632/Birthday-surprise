@@ -43,41 +43,25 @@ function App() {
 
   const audioRef = useRef(null);
 
+  if (!audioRef.current) {
+    audioRef.current = new Audio(
+      `${process.env.PUBLIC_URL}/birthday-music.mp3`
+    );
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.75;
+    audioRef.current.preload = "auto";
+  }
+
   // =========================
   // PHOTOS
   // =========================
 
   const photos = [
-    "/photos/photo1.jpg",
-    "/photos/photo2.jpg",
-    "/photos/photo3.jpg",
-    "/photos/photo4.jpg",
-  ];
-
-  // =========================
-  // MUSIC SETUP
-  // =========================
-
-  useEffect(() => {
-    const audio = audioRef.current;
-
-    if (!audio) return;
-
-    audio.loop = true;
-    audio.volume = 0.75;
-
-    const handleEnded = () => {
-      audio.currentTime = 0;
-      audio.play().catch(() => {});
-    };
-
-    audio.addEventListener("ended", handleEnded);
-
-    return () => {
-      audio.removeEventListener("ended", handleEnded);
-    };
-  }, []);
-
+  `${process.env.PUBLIC_URL}/photos/photo1.jpg`,
+  `${process.env.PUBLIC_URL}/photos/photo2.jpg`,
+  `${process.env.PUBLIC_URL}/photos/photo3.jpg`,
+  `${process.env.PUBLIC_URL}/photos/photo4.jpg`,
+];
   // =========================
   // UNLOCK WEBSITE + START MUSIC
   // =========================
@@ -225,7 +209,7 @@ function App() {
         {/* SAME AUDIO ELEMENT */}
         <audio
           ref={audioRef}
-          src="/birthday-music.mp3"
+         src="./birthday-music.mp3"
           loop
           preload="auto"
         />
