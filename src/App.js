@@ -209,7 +209,7 @@ function App() {
         {/* SAME AUDIO ELEMENT */}
         <audio
           ref={audioRef}
-         src="./birthday-music.mp3"
+         src="./birthday-music.mp3.mp3"
           loop
           preload="auto"
         />
@@ -301,7 +301,7 @@ function App() {
       {/* MUSIC CONTINUES AFTER UNLOCK */}
       <audio
         ref={audioRef}
-        src="/birthday-music.mp3"
+        src="/birthday-music.mp3.mp3"
         loop
         preload="auto"
       />
