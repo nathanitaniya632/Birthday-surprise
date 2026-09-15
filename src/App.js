@@ -45,7 +45,7 @@ function App() {
 
   if (!audioRef.current) {
     audioRef.current = new Audio(
-      `${process.env.PUBLIC_URL}/birthday-music.mp3`
+      `${process.env.PUBLIC_URL}/birthday-music.mp3.mp3`
     );
     audioRef.current.loop = true;
     audioRef.current.volume = 0.75;
@@ -905,5 +905,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
