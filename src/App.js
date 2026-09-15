@@ -45,7 +45,7 @@ function App() {
 
   if (!audioRef.current) {
     audioRef.current = new Audio(
-      `${process.env.PUBLIC_URL}/birthday-music.mp3.mp3`
+      `${process.env.PUBLIC_URL}/birthday-music.mp3`
     );
     audioRef.current.loop = true;
     audioRef.current.volume = 0.75;
@@ -209,7 +209,7 @@ function App() {
         {/* SAME AUDIO ELEMENT */}
         <audio
           ref={audioRef}
-         src="./birthday-music.mp3.mp3"
+         src="./birthday-music.mp3"
           loop
           preload="auto"
         />
@@ -301,7 +301,7 @@ function App() {
       {/* MUSIC CONTINUES AFTER UNLOCK */}
       <audio
         ref={audioRef}
-        src="/birthday-music.mp3.mp3"
+        src="/birthday-music.mp3"
         loop
         preload="auto"
       />
